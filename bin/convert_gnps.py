@@ -16,6 +16,9 @@ sdrf_df["characteristics[organism part]"] = "not applicable"
 sdrf_df["characteristics[organism]"] = "Escherichia coli"
 sdrf_df["characteristics[disease]"] = "not applicable"
 sdrf_df["characteristics[cell type]"] = "not applicable"
+sdrf_df["characteristics[biological replicate]"] = df["ATTRIBUTE_Mutant"]
+sdrf_df["characteristics[technical replicate]"] = range(1, len(sdrf_df) + 1)
+
 
 sdrf_df["assay name"] = df["filename"]
 sdrf_df["comment[data file]"] = df["filename"]

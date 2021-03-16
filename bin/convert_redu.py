@@ -16,6 +16,9 @@ sdrf_df["characteristics[organism part]"] = dataset_df["UBERONBodyPartName"]
 sdrf_df["characteristics[organism]"] = dataset_df["NCBITaxonomy"].apply(lambda x: x.split("|")[-1])
 sdrf_df["characteristics[disease]"] = dataset_df["DOIDCommonName"]
 sdrf_df["characteristics[cell type]"] = dataset_df["SampleType"]
+sdrf_df["characteristics[biological replicate]"] = range(1, len(sdrf_df) + 1)
+sdrf_df["characteristics[technical replicate]"] = range(1, len(sdrf_df) + 1)
+
 
 sdrf_df["assay name"] = dataset_df["filename"]
 sdrf_df["comment[data file]"] = dataset_df["filename"].apply(lambda x: os.path.basename(x))
